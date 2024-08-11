@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "budget-tracker-bot"
 version = "0.1.0"
-description = "Budget tracker telegram bot"
+description = "Telegram bot for personal income and expenses management"
 authors = ["Nisakoo"]
 readme = "README.md"
 
