@@ -3,6 +3,8 @@ version: '3.4'
 services:
   budget-tracker-bot:
     image: budget-tracker-bot
+    container_name: budget-tracker-bot
+    restart: always
     env_file: .env
     build:
       context: .
