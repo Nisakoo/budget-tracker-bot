@@ -3,6 +3,8 @@ from typing import Any, Callable
 from telegram import Update
 from telegram.ext import ContextTypes
 
+from config import ADMIN_ID
+
 
 def database(func) -> Callable:
     """
@@ -40,4 +42,13 @@ def delete_previous_message(func) -> Callable:
             *args, **kwargs
         )
     
+    return inner
+
+
+def whitelist(func) -> Callable:
+    async def inner(
+            update: Update, context: ContextTypes.DEFAULT_TYPE, *args, **kwargs) -> Any:
+        if update.effective_user.id == ADMIN_ID:
+            return await func(update, context, *args, **kwargs)
+        
     return inner

@@ -12,6 +12,7 @@ CHOOSE_CATEGORY, SET_AMOUNT = 0, 1
 
 
 @decorators.database
+@decorators.whitelist
 async def tracker_start(
         update: Update, context: ContextTypes.DEFAULT_TYPE, db: BaseDataBase) -> int:
     # I know that I can write it in one row

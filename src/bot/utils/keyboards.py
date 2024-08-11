@@ -9,14 +9,18 @@ from config import LOCALE
 def choose_category_keyboard(categories: tuple) -> ReplyKeyboardMarkup:
     categories = list(categories)
     _keyboard = list()
-    for i in range(0, min(len(categories), 9), 3):
-        _keyboard.append(categories[i:i+3])
 
-    if not LOCALE["other"] in categories:
-        if len(_keyboard[-1]) < 3:
-            _keyboard[-1].append(LOCALE["other"])
-        else:
-            _keyboard.append([LOCALE["other"]])
+    if categories:
+        for i in range(0, min(len(categories), 9), 3):
+            _keyboard.append(categories[i:i+3])
+
+        if not LOCALE["other"] in categories:
+            if len(_keyboard[-1]) < 3:
+                _keyboard[-1].append(LOCALE["other"])
+            else:
+                _keyboard.append([LOCALE["other"]])
+    else:
+        _keyboard.append([LOCALE["other"]])
 
     _keyboard.append([LOCALE["cancel"]])
 

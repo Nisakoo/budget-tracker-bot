@@ -29,6 +29,7 @@ async def end_conversation(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 
 @decorators.database
+@decorators.whitelist
 async def fast_add(
         update: Update, context: ContextTypes.DEFAULT_TYPE, db: BaseDataBase) -> None:
     """

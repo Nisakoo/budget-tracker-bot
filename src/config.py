@@ -8,7 +8,9 @@ from utils.locale import Locale
 load_dotenv()
 
 
-TOKEN = os.getenv("TOKEN")
 LOCALE = Locale("ru")
+
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 DB_FILE = "db.sqlite3"

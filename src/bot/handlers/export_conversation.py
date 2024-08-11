@@ -12,6 +12,7 @@ from utils.functions import get_csv, get_image
 CHOOSE_CATEGORY, SET_PERIOD = 0, 1
 
 
+@decorators.whitelist
 async def export_start(
         update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.effective_message.reply_text(
