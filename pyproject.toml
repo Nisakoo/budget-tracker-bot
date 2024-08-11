@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "budget-tracker-bot"
+version = "0.1.0"
+description = "Budget tracker telegram bot"
+authors = ["Nisakoo"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.1"
+python-telegram-bot = "^21.4"
+aiosqlite = "^0.20.0"
+matplotlib = "^3.9.1.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
