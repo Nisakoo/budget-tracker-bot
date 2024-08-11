@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  budget-tracker-bot:
+    image: budget-tracker-bot
+    env_file: .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile

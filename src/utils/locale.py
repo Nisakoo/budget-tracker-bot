@@ -4,14 +4,13 @@ import random
 
 class Locale(dict):
 
-    LANG_FILE = "src/static/lang.json"
-
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, path: str) -> None:
         self.name = name
+        self.path = path
         self._load()
 
     def _load(self) -> None:
-        with open(self.LANG_FILE, encoding="utf-8") as lang_file:
+        with open(self.path, encoding="utf-8") as lang_file:
             locales = json.load(lang_file)
 
         if not self.name in locales:

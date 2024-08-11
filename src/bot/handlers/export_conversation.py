@@ -71,7 +71,7 @@ async def export_set_period(
             sorted_data = sorted(data, key=lambda x: x[1], reverse=True)
             total_amount = sum(i[1] for i in sorted_data)
 
-            message = str()
+            message = f"<b>{total_amount}{LOCALE['currency']}</b>:\n\n"
             for i in sorted_data:
                 message += f"<b>{i[0]}</b> {i[1]:.2f}{LOCALE['currency']} ({i[1]/total_amount:.2%})\n"
 
